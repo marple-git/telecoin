@@ -7,7 +7,9 @@ pip install telecoin
 ---
 
 ## Contacts
-* 🖱️ __Developer contacts: [![Dev-Telegram](https://img.shields.io/badge/Telegram-blue.svg?style=flat-square&logo=telegram)](https://t.me/GLEF1X)__
+* 🖱️ __Developer contacts: [![Dev-Telegram](https://img.shields.io/badge/Telegram-blue.svg?style=flat-square&logo=telegram)](https://t.me/marple_tech)__
+
+---
 
 ## 🐦Dependencies  
 
