@@ -1,0 +1,26 @@
+[tool.poetry]
+name = "telecoin"
+version = "0.0.6"
+description = "Simple library to make payments via telegram bitcoin exchangers"
+authors = ["Marple"]
+readme = "README.md"
+repository = "https://github.com/marple-git/telecoin"
+keywords = [
+	"telegram",
+	"aiogram",
+	"btc banker",
+	"banker",
+	"btc_change_bot",
+	"async"
+]
+
+[tool.poetry.dependencies]
+python = "^3.6"
+Pyrogram = "1.2.9"
+aiohttp = "3.7.4.post0"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
