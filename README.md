@@ -1,4 +1,4 @@
-### 💾Installation
+### 💾 Installation
 
 ```bash
 pip install telecoin
@@ -6,12 +6,12 @@ pip install telecoin
 
 ---
 
-## Contacts
+## 📞 Contacts
 * 🖱️ __Developer contacts: [![Dev-Telegram](https://img.shields.io/badge/Telegram-blue.svg?style=flat-square&logo=telegram)](https://t.me/marple_tech)__
 
 ---
 
-## 🐦Dependencies  
+## 🐦 Dependencies  
 
 | Library | Description                                            |
 |:-------:|:----------------------------------------------:        |
