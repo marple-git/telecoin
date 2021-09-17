@@ -20,6 +20,13 @@ pip install telecoin
 
 ---
 
+
+## ❔ What is this? 
+This is simple library to activate @BTC_CHANGE_BOT gift cheque. 
+
+
+---
+
 ## ↗️ Create Session
 ```python
 import asyncio
