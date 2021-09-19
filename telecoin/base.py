@@ -8,7 +8,7 @@ import aiohttp
 from pyrogram import Client
 
 from .exceptions import InvalidData, InvalidCheque
-from .utils import configure
+from .utils import Success
 
 
 async def _to_rub(btc_amount: float) -> float:
@@ -20,15 +20,13 @@ async def _to_rub(btc_amount: float) -> float:
         async with session.get('https://blockchain.info/ticker') as r:
             response = await r.json()
     btc_price = float(response['RUB']['15m'])
-
     return btc_amount * btc_price
 
 
 def _get_cheque_code(cheque: str):
     if re.search(r'BTC_CHANGE_BOT\?start=', cheque):
         return re.findall(r'c_\S+', cheque)[0]
-    else:
-        return cheque
+    return cheque
 
 
 def _validate_params(
@@ -110,6 +108,7 @@ class BankerWrapper(BaseWrapper):
         await self.app.stop(block=False)
 
     async def activate_cheque(self, cheque: str):
+        """Activate Cheque"""
         code = _get_cheque_code(cheque)
         async with self.connect() as client:
             await asyncio.sleep(1.5)
@@ -123,6 +122,6 @@ class BankerWrapper(BaseWrapper):
             elif 'Вы получили' in msg:
                 btc = float(re.findall('\d[.]\d+|\d+', msg)[0])
                 rub = await _to_rub(btc)
-                return configure(btc=btc, rub=rub)
+                return Success(rub=rub, btc=btc)
             else:
                 raise InvalidCheque("Looks like BTC Banker didn't answer to me or cheque is invalid")

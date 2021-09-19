@@ -2,11 +2,7 @@ from dataclasses import dataclass
 
 
 @dataclass
-class Cheque:
+class Success:
     rub: float
     btc: float
 
-
-def configure(rub: float, btc: float):
-    return Cheque(rub=rub,
-                  btc=btc)
