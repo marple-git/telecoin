@@ -76,14 +76,14 @@ class BankerWrapper:
             async with asyncio.Lock():
                 async for message in client.search_messages(chat_id='BTC_CHANGE_BOT', limit=1):
                     msg = message['text']
-            if 'Упс, кажется, данный чек успел обналичить кто-то другой 😟' in msg:
-                raise InvalidCheque('Cheque was already activated.')
-            elif 'Вы получили' in msg:
-                btc = float(re.findall('\d[.]\d+|\d+', msg)[0])
-                rub = await self.to_rub(btc)
-                return Result(rub=rub, btc=btc)
-            else:
-                raise InvalidCheque("Looks like BTC Banker didn't answer to me or cheque is invalid")
+        if 'Упс, кажется, данный чек успел обналичить кто-то другой 😟' in msg:
+            raise InvalidCheque('Cheque was already activated.')
+        elif 'Вы получили' in msg:
+            btc = float(re.findall('\d[.]\d+|\d+', msg)[0])
+            rub = await self.to_rub(btc)
+            return Result(rub=rub, btc=btc)
+        else:
+            raise InvalidCheque("Looks like BTC Banker didn't answer to me or cheque is invalid")
 
 
 class ChatexWrapper(BankerWrapper):
@@ -97,11 +97,11 @@ class ChatexWrapper(BankerWrapper):
             async with asyncio.Lock():
                 async for message in client.search_messages(chat_id='Chatex_bot', limit=1):
                     msg = message['text']
-            if '❗️ MoneyLink уже была активирована!' in msg:
-                raise InvalidCheque('Cheque was already activated.')
-            elif 'успешно активирован!' in msg:
-                btc = float(re.findall('\d[.]\d+|\d+', msg)[0])
-                rub = await self.to_rub(btc)
-                return Result(rub=rub, btc=btc)
-            else:
-                raise InvalidCheque("Looks like Chatex didn't answer to me or cheque is invalid")
+        if '❗️ MoneyLink уже была активирована!' in msg:
+            raise InvalidCheque('Cheque was already activated.')
+        elif 'успешно активирован!' in msg:
+            btc = float(re.findall('\d[.]\d+|\d+', msg)[0])
+            rub = await self.to_rub(btc)
+            return Result(rub=rub, btc=btc)
+        else:
+            raise InvalidCheque("Looks like Chatex didn't answer to me or cheque is invalid")
