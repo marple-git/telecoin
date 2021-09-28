@@ -59,7 +59,6 @@ async def main():
     banker = BankerWrapper(phone_number='Your Number', api_id='Your ID',
                            api_hash='Your Hash',
                            session_name='i_love_telecoin')
-    await banker.create_session()
     try:
         result = await chatex.activate_cheque('https://telegram.me/BTC_CHANGE_BOT?start=c_ae0f629a49fd1b494b371c0ec64d1v21')
         print(f'Received {result.btc} BTC / {result.rub} RUB')
