@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "telecoin"
-version = "0.1.3"
+version = "0.1.5"
 description = "Simple library to make payments via telegram bitcoin exchangers"
 authors = ["Marple"]
 readme = "README.md"
@@ -11,7 +11,8 @@ keywords = [
 	"btc banker",
 	"banker",
 	"btc_change_bot",
-	"async"
+	"async",
+	"chatex"
 ]
 
 [tool.poetry.dependencies]
