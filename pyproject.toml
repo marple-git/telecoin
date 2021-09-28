@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "telecoin"
-version = "0.0.6"
+version = "0.1.3"
 description = "Simple library to make payments via telegram bitcoin exchangers"
 authors = ["Marple"]
 readme = "README.md"
