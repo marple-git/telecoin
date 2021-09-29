@@ -1,2 +1,2 @@
-from .api import BankerWrapper, ChatexWrapper
+from .api import BankerWrapper, ChatexWrapper, GetWalletWrapper
 from .exceptions import InvalidCheque
