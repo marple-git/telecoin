@@ -3,11 +3,11 @@ import re
 from contextlib import asynccontextmanager
 from typing import Union, AsyncIterator
 
-from pyrogram import Client
 import aiohttp
+from pyrogram import Client
 
 from .exceptions import InvalidCheque
-from .utils import configure, _validate_params, get_cheque_code, Result
+from .utils import _validate_params, get_cheque_code, Result
 
 
 class BankerWrapper:
@@ -105,3 +105,24 @@ class ChatexWrapper(BankerWrapper):
             return Result(rub=rub, btc=btc)
         else:
             raise InvalidCheque("Looks like Chatex didn't answer to me or cheque is invalid")
+
+
+class GetWalletWrapper(BankerWrapper):
+    async def activate_cheque(self, cheque: str):
+        """Activate Cheque"""
+        code = get_cheque_code(cheque)
+        async with self.connect() as client:
+            await asyncio.sleep(1.5)
+            await client.send_message('Getwallet_bot', f'/start {code}')
+            await asyncio.sleep(.7)
+            async with asyncio.Lock():
+                async for message in client.search_messages(chat_id='Getwallet_bot', limit=1):
+                    msg = message['text']
+        if '😮 Увы, но данный купон не существует' in msg:
+            raise InvalidCheque('Cheque was already activated.')
+        elif 'Подарочный код активирован' in msg:
+            btc = float(re.findall('\d[.]\d+|\d+', msg)[0])
+            rub = await self.to_rub(btc)
+            return Result(rub=rub, btc=btc)
+        else:
+            raise InvalidCheque("Looks like GetWallet didn't answer to me or cheque is invalid")

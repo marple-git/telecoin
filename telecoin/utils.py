@@ -13,6 +13,8 @@ def get_cheque_code(cheque: str):
             and re.search(r'Chatex_bot\?start=', cheque)
     ):
         return re.findall(r'c_\S+', cheque)[0]
+    elif re.search(r'Getwallet_bot\?start=', cheque):
+        return re.findall(r'g_\S+', cheque)[0]
     return cheque
 
 
@@ -52,8 +54,3 @@ def _validate_params(
 class Result:
     rub: float
     btc: float
-
-
-def configure(rub: float, btc: float):
-    return Result(rub=rub,
-                  btc=btc)
