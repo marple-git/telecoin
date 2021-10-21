@@ -1,3 +1,6 @@
+[![Downloads](https://pepy.tech/badge/telecoin)](https://pepy.tech/project/telecoin)
+[![Downloads](https://pepy.tech/badge/telecoin/month)](https://pepy.tech/project/telecoin)
+[![Downloads](https://pepy.tech/badge/telecoin/week)](https://pepy.tech/project/telecoin)
 ### 💾 Installation
 
 ```bash
