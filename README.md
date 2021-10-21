@@ -1,8 +1,8 @@
 [![Downloads](https://pepy.tech/badge/telecoin)](https://pepy.tech/project/telecoin)
 [![Downloads](https://pepy.tech/badge/telecoin/month)](https://pepy.tech/project/telecoin)
 [![Downloads](https://pepy.tech/badge/telecoin/week)](https://pepy.tech/project/telecoin)
-https://www.code-inspector.com/project/29472/score/svg
-https://www.code-inspector.com/project/29472/status/svg
+[![Score](https://www.code-inspector.com/project/29472/score/svg)]
+[![Score](https://www.code-inspector.com/project/29472/status/svg)]
 ### 💾 Installation
 
 ```bash
