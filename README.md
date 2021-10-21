@@ -25,7 +25,7 @@ pip install telecoin
 
 
 ## ❔ What is this? 
-* This is simple library to activate @BTC_CHANGE_BOT, @Chatex_bot gift cheque. 
+* This is simple library to activate @BTC_CHANGE_BOT, @Chatex_bot, @GetWallet_bot gift cheque. 
 
 
 ---
