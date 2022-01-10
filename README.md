@@ -65,7 +65,7 @@ async def main():
                            api_hash='Your Hash',
                            session_name='i_love_telecoin')
     try:
-        result = await chatex.activate_cheque('https://telegram.me/BTC_CHANGE_BOT?start=c_ae0f629a49fd1b494b371c0ec64d1v21')
+        result = await banker.activate_cheque('https://telegram.me/BTC_CHANGE_BOT?start=c_ae0f629a49fd1b494b371c0ec64d1v21')
         print(f'Received {result.btc} BTC / {result.rub} RUB')
     except InvalidCheque:
         print('Cheque is not valid')
