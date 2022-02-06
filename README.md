@@ -56,8 +56,8 @@ if __name__ == '__main__':
 ```python
 import asyncio
 
-import telecoin.exceptions
 from telecoin import BankerWrapper
+from telecoin.exceptions import InvalidCheque
 
 
 async def main():
